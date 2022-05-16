@@ -7,7 +7,7 @@ A **prime number** is a natural number greater than 1 which is divisible only by
 ###### Problem Constraints
 
 ```
-1 <= A <= 106
+1 <= A <= 10^6
 ```
 
 ###### input format
