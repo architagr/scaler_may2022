@@ -2,29 +2,13 @@ package main
 
 import (
 	"fmt"
-	isitperfect "scaler-may-22/week1/day1_assingment/is-it-perfect"
-	_ "scaler-may-22/week1/day1_assingment/isitprime"
+	summationgame "scaler-may-22/week1/day1_assingment/summation-game"
 )
 
 func main() {
 	fmt.Println("Enter a number")
 
-	var n int8
+	var n int
 	fmt.Scanf("%d", &n)
-	io := make([]bool, 0, n)
-	var i int8 = 0
-	for ; i < n; i++ {
-		var a int64
-		fmt.Scanf("%d", &a)
-		check := isitperfect.IsItPerfect(a)
-		io = append(io, check)
-	}
-	for _, check := range io {
-		if check {
-			fmt.Println("YES")
-		} else {
-			fmt.Println("NO")
-		}
-	}
-
+	fmt.Println(summationgame.SummationGame(n))
 }
