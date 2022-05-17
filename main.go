@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	summationgame "scaler-may-22/week1/day1_assingment/summation-game"
+	armstrongnumbers "scaler-may-22/week1/day1_homework/armstrong-numbers"
 )
 
 func main() {
@@ -10,5 +10,8 @@ func main() {
 
 	var n int
 	fmt.Scanf("%d", &n)
-	fmt.Println(summationgame.SummationGame(n))
+	result := armstrongnumbers.GetArmstrongInRange(n)
+	for _, val := range result {
+		fmt.Println(val)
+	}
 }
