@@ -1,33 +1,35 @@
-package reversearray
+package goodpair
 
 import (
 	"fmt"
-	"reflect"
 	"testing"
 )
 
 type TestCase struct {
 	inputArr []int
-	expected []int
+	inputB   int
+	expected int
 }
 
-func TestReverseArray(t *testing.T) {
+func TestCheckGoodPairExists(t *testing.T) {
 	testCases := make([]TestCase, 0)
 	testCases = append(testCases, TestCase{
 		inputArr: []int{1, 2, 3, 4, 5},
-		expected: []int{5, 4, 3, 2, 1},
+		inputB:   9,
+		expected: 1,
 	})
 
 	testCases = append(testCases, TestCase{
 		inputArr: []int{12, 232, 35, 14, 5},
-		expected: []int{5, 14, 35, 232, 12},
+		inputB:   10,
+		expected: 0,
 	})
 
 	for _, testcase := range testCases {
 		t.Run(fmt.Sprintf("testing %v", testcase.inputArr), func(tb *testing.T) {
-			got := ReverseArray(testcase.inputArr)
-			if !reflect.DeepEqual(got, testcase.expected) {
-				tb.Errorf("Tested %+v to  expected %+v but got %+v", testcase.inputArr, testcase.expected, got)
+			got := CheckGoodPairExists(testcase.inputArr, testcase.inputB)
+			if got != testcase.expected {
+				tb.Errorf("Tested %+v to have %d expected %d but got %d", testcase.inputArr, testcase.inputB, testcase.expected, got)
 			}
 		})
 	}
