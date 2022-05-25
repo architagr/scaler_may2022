@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	searchelement "scaler-may-22/week2/day8_assingment/search_element"
+	maxminarray "scaler-may-22/week2/day8_assingment/max_min_array"
 	"strconv"
 	"strings"
 )
@@ -15,21 +15,9 @@ func main() {
 	// E.g. 'fmt.Scanf' for input & 'fmt.Printf' for output
 	in := bufio.NewReader(os.Stdin)
 
-	t := readInt(in)
-	result := make([]int, t)
-	for i := 0; i < t; i++ {
-		arr := readArrInt(in)
-		b := readInt(in)
-		fmt.Println("b", b, "arr", len(arr))
-		if searchelement.SearchElement(arr, b) {
-			result[i] = 1
-		} else {
-			result[i] = 0
-		}
-	}
-	for i := 0; i < t; i++ {
-		fmt.Println(result[i])
-	}
+	arr := readArrInt(in)
+	max, min := maxminarray.MaxMinArray(arr)
+	fmt.Println(max, min)
 }
 
 func readInt(in *bufio.Reader) int {
@@ -45,9 +33,9 @@ func readLineNumbs(in *bufio.Reader) []string {
 	fmt.Println("line", len(line))
 	line = strings.ReplaceAll(line, "\r", "")
 	line = strings.ReplaceAll(line, "\n", "")
+	line = strings.TrimSpace(line)
+	line = strings.Trim(line, "\t \n")
 	numbs := strings.Split(line, " ")
-	fmt.Println("numbs", len(numbs))
-
 	return numbs
 }
 
