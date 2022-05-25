@@ -1,15 +1,15 @@
 # Problem Description
 
-Given an array **A** and an integer **B**. A **pair(i, j)** in the array is a good pair if **i != j** and **(A[i] + A[j] == B)**. Check if any good pair exist or not.
+Given an integer array **A** and an integer **B**, you have to print the same array after rotating it **B** times towards the right.
 
 ###### Problem Constraints
 
 ```
-1 <= A.size() <= 104
+1 <= A.size() <= 10^4
 
-1 <= A[i] <= 109
+1 <= A[i] <= 10^9
 
-1 <= B <= 109
+1 <= B <= 10^9
 ```
 
 ###### input format
@@ -23,7 +23,7 @@ Second argument is an integer B.
 ###### Output Format
 
 ```
-Return 1 if good pair exist otherwise return 0.
+Print an array of integers which is the **Bth** right rotation of input array **A**, on a separate line.
 ```
 
 ###### Example Input
@@ -31,12 +31,12 @@ Return 1 if good pair exist otherwise return 0.
 ```
 # input 1 : 
     A = [1,2,3,4]
-    B = 7
+    B = 2
 # output 1: 
-    1 
+    3 4 1 2
 # input 2 : 
-    A = [1,2,4]
-    B = 4
+    A = [1,2,3,4]
+    B = 6
 # output 2: 
-    0
+    3 4 1 2
 ```
