@@ -1,8 +1,6 @@
 package reversearray
 
-func ReverseArray(A []int) []int {
-	i := 0
-	j := len(A) - 1
+func ReverseArray(A []int, i, j int) []int {
 	for i <= j {
 		temp := A[i]
 		A[i] = A[j]
