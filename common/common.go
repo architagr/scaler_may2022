@@ -29,9 +29,21 @@ func ReadLineNumbs(in *bufio.Reader) []string {
 func ReadArrInt(in *bufio.Reader) []int {
 	numbs := ReadLineNumbs(in)
 	arr := make([]int, 0)
-	for _, n := range numbs[1:] {
+	for _, n := range numbs {
 		val, _ := strconv.Atoi(n)
 		arr = append(arr, val)
 	}
 	return arr
+}
+
+func MaxInt() int {
+	const MaxUint = ^uint(0)
+	const MaxInt = int(MaxUint >> 1)
+	return MaxInt
+}
+func MinInt() int {
+	const MaxUint = ^uint(0)
+	const MaxInt = int(MaxUint >> 1)
+	const MinInt = -MaxInt - 1
+	return MinInt
 }
