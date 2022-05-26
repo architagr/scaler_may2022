@@ -62,5 +62,4 @@ Second line should contain an array of space separated integers containing all t
     2 2 2
     1 1
      
-
 ```
