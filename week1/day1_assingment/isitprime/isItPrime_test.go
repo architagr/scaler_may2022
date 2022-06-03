@@ -11,10 +11,6 @@ func TestIsPrime(t *testing.T) {
 	testCases[4] = false
 	testCases[113] = true
 
-	const MaxUint = ^uint64(0)
-	const MaxInt = int64(MaxUint >> 1)
-	testCases[MaxInt] = false
-
 	for key, testcase := range testCases {
 		t.Run(fmt.Sprintf("testing %d", key), func(tb *testing.T) {
 			got := IsPrime(key)
