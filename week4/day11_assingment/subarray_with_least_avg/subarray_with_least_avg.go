@@ -2,7 +2,7 @@ package subarray_with_least_avg
 
 import (
 	"scaler-may-22/common"
-	"scaler-may-22/week2/day9_assingment/range_sum_query"
+	"scaler-may-22/week3/day9_assingment/range_sum_query"
 )
 
 func SubArrayWithLeastAverage(A []int, B int) int {

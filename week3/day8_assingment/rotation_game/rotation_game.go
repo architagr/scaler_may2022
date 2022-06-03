@@ -1,7 +1,7 @@
 package rotationgame
 
 import (
-	reversearray "scaler-may-22/week2/day8_assingment/reverse_array"
+	reversearray "scaler-may-22/week3/day8_assingment/reverse_array"
 )
 
 func RotateArray(arr []int, k int) []int {

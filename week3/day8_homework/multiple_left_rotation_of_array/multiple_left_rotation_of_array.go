@@ -1,7 +1,7 @@
 package multiple_left_rotation_of_array
 
 import (
-	reversearray "scaler-may-22/week2/day8_assingment/reverse_array"
+	reversearray "scaler-may-22/week3/day8_assingment/reverse_array"
 )
 
 func MultipleLeftRotateArray(A []int, B []int) [][]int {

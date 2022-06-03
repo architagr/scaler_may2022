@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"scaler-may-22/common"
-	"scaler-may-22/week2/day8_homework/separate_even_odd"
+	"scaler-may-22/week3/day8_homework/separate_even_odd"
 )
 
 func main() {

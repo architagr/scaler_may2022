@@ -2,7 +2,7 @@ package equilibrium_index_of_array
 
 import (
 	"log"
-	"scaler-may-22/week2/day9_assingment/range_sum_query"
+	"scaler-may-22/week3/day9_assingment/range_sum_query"
 )
 
 func FindEquilibrimIndex(A []int) int {

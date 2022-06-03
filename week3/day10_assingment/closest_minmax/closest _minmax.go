@@ -2,7 +2,7 @@ package closest_minmax
 
 import (
 	"math"
-	maxminarray "scaler-may-22/week2/day8_assingment/max_min_array"
+	maxminarray "scaler-may-22/week3/day8_assingment/max_min_array"
 )
 
 func FindClosestMinMax(A []int) int {

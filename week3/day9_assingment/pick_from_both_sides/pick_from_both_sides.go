@@ -1,6 +1,6 @@
 package pick_from_both_sides
 
-import "scaler-may-22/week2/day9_assingment/range_sum_query"
+import "scaler-may-22/week3/day9_assingment/range_sum_query"
 
 func PickFromBothSides(A []int, B int) int {
 	prefixSumArray := range_sum_query.FindPrefixSum(A)
