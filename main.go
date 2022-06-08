@@ -2,10 +2,9 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"scaler-may-22/common"
-	"scaler-may-22/week3/day8_homework/separate_even_odd"
+	"scaler-may-22/week5/day13_homework/hollow_dimond_star"
 )
 
 func main() {
@@ -14,20 +13,6 @@ func main() {
 	// E.g. 'fmt.Scanf' for input & 'fmt.Printf' for output
 	in := bufio.NewReader(os.Stdin)
 	t := common.ReadInt(in)
-	result := make([][]int, 0)
 
-	for i := 0; i < t; i++ {
-		common.ReadInt(in)
-		arr := common.ReadArrInt(in)
-		even, odd := separate_even_odd.SeparateEvenOdd(arr)
-		result = append(result, odd)
-		result = append(result, even)
-
-	}
-	for _, val := range result {
-		for _, val1 := range val {
-			fmt.Printf("%d ", val1)
-		}
-		fmt.Printf("\n")
-	}
+	hollow_dimond_star.PrintHollowDimondStar(t)
 }
