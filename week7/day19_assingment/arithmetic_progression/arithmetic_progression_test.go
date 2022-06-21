@@ -22,11 +22,11 @@ func TestIfAp(t *testing.T) {
 		expected: 0,
 	})
 
-	for _, testCase := range testCases {
-		t.Run(fmt.Sprintf("testing %d", testCase.input), func(tb *testing.T) {
+	for i, testCase := range testCases {
+		t.Run(fmt.Sprintf("testing %d", (i+1)), func(tb *testing.T) {
 			got := IfAp(testCase.input)
 			if got != testCase.expected {
-				tb.Errorf("tested %d expected %d but got %d", testCase.input, testCase.expected, got)
+				tb.Errorf("tested %d expected %d but got %d", (i + 1), testCase.expected, got)
 			}
 		})
 	}
