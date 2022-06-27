@@ -22,6 +22,11 @@ func TestFindSubArrayWithSum0(t *testing.T) {
 		expected: 0,
 	})
 
+	testCases = append(testCases, TestCase{
+		input:    []int{1, -1},
+		expected: 1,
+	})
+
 	for i, testCase := range testCases {
 		t.Run(fmt.Sprintf("testing %d", (i+1)), func(tb *testing.T) {
 			got := FindSubArrayWithSum0(testCase.input)
