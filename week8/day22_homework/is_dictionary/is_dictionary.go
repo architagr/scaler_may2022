@@ -19,7 +19,7 @@ func IsDisctionary(A []string, B string) int {
 					if letterMap[currentStr[k]] < letterMap[oldString[k]] {
 						return 0
 					} else {
-						//prackically breaking out of loop of k
+						//practically breaking out of loop of k
 						k = min
 					}
 
