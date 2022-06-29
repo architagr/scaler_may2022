@@ -6,22 +6,22 @@ import (
 	"strings"
 )
 
-func ReadInt(in *bufio.Reader) int {
+func ReadString(in *bufio.Reader) string {
 	nStr, _ := in.ReadString('\n')
 	nStr = strings.ReplaceAll(nStr, "\r", "")
 	nStr = strings.ReplaceAll(nStr, "\n", "")
 	nStr = strings.TrimSpace(nStr)
 	nStr = strings.Trim(nStr, "\t \n")
+	return nStr
+}
+func ReadInt(in *bufio.Reader) int {
+	nStr := ReadString(in)
 	n, _ := strconv.Atoi(nStr)
 	return n
 }
 
 func ReadLineNumbs(in *bufio.Reader) []string {
-	line, _ := in.ReadString('\n')
-	line = strings.ReplaceAll(line, "\r", "")
-	line = strings.ReplaceAll(line, "\n", "")
-	line = strings.TrimSpace(line)
-	line = strings.Trim(line, "\t \n")
+	line := ReadString(in)
 	numbs := strings.Split(line, " ")
 	return numbs
 }
