@@ -26,9 +26,9 @@ Return an integer denoting the sum of digits of the number A.
 # input 1 : 
     A = 46
 # output 1: 
-    A = 11
-# input 2 : 
     10
+# input 2 : 
+    A = 11
 # output 2: 
     2
 ```
