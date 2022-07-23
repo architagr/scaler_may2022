@@ -23,11 +23,7 @@ func sortCustome(arr [][]int, p int, q int) bool {
 		}
 	}
 
-	if len(a) > len(b) {
-		return false
-	}
-
-	return true
+	return len(a) <= len(b)
 
 }
 func GetSubset(A []int) (arr [][]int) {

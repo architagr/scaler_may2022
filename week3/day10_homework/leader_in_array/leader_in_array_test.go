@@ -15,7 +15,7 @@ func TestFindLeaders(t *testing.T) {
 	testCases := make([]TestCase, 0)
 	testCases = append(testCases, TestCase{
 		inputArr: []int{16, 17, 4, 3, 5, 2},
-		expected: []int{17, 2, 5},
+		expected: []int{2, 5, 17},
 	})
 
 	testCases = append(testCases, TestCase{
