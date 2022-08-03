@@ -11,16 +11,16 @@ type TestCase struct {
 
 func TestAddBinaryStrings(t *testing.T) {
 	testCases := make([]TestCase, 0)
-	// testCases = append(testCases, TestCase{
-	// 	a:        "100",
-	// 	b:        "11",
-	// 	expected: "111",
-	// })
-	// testCases = append(testCases, TestCase{
-	// 	a:        "00",
-	// 	b:        "11",
-	// 	expected: "11",
-	// })
+	testCases = append(testCases, TestCase{
+		a:        "100",
+		b:        "11",
+		expected: "111",
+	})
+	testCases = append(testCases, TestCase{
+		a:        "00",
+		b:        "11",
+		expected: "11",
+	})
 
 	testCases = append(testCases, TestCase{
 		a:        "1010110111001101101000",
