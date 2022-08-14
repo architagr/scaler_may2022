@@ -1,4 +1,4 @@
-package minimum_swaps_2
+package minimum_swaps
 
 import (
 	"fmt"
