@@ -14,19 +14,19 @@ type TestCase struct {
 func TestComputeNCR(t *testing.T) {
 	testCases := make([]TestCase, 0)
 
-	// testCases = append(testCases, TestCase{
-	// 	a:        5,
-	// 	b:        2,
-	// 	c:        13,
-	// 	expected: 10,
-	// })
+	testCases = append(testCases, TestCase{
+		a:        5,
+		b:        2,
+		c:        13,
+		expected: 10,
+	})
 
-	// testCases = append(testCases, TestCase{
-	// 	a:        300,
-	// 	b:        116,
-	// 	c:        643,
-	// 	expected: 323,
-	// })
+	testCases = append(testCases, TestCase{
+		a:        300,
+		b:        116,
+		c:        643,
+		expected: 323,
+	})
 
 	testCases = append(testCases, TestCase{
 		a:        51299,
