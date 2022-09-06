@@ -1,36 +1,62 @@
 package median_of_array
 
+import "math"
+
 func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
+
 	n, m := len(nums1), len(nums2)
-	isOdd := true
-	if m > n {
-		n, m = m, n
-		nums1, nums2 = nums2, nums1
+	if n > m {
+		return FindMedianSortedArrays(nums2, nums1)
 	}
-	if (n+m)&1 == 0 {
-		isOdd = false
-	}
-	length := (n + m) / 2
+	low, high := 0, n
+	for low <= high {
+		cut1 := (low + high) / 2
+		cut2 := ((n + m + 1) / 2) - cut1
 
-	arr := make([]int, 0, length+1)
-	k := 0
-	arr = append(arr, nums1...)
+		left1, left2 := math.MinInt32, math.MinInt32
 
-	for k < m && ((len(arr) > length && nums2[k] < arr[length]) || (len(arr) <= length)) {
-		l, r := 0, len(arr)-1
-		for l <= r {
-			mid := (l + r) / 2
-			if nums2[k] < arr[mid] {
-				r = mid - 1
+		if cut1 > 0 {
+			left1 = nums1[cut1-1]
+		}
+
+		if cut2 > 0 {
+			left2 = nums2[cut2-1]
+		}
+
+		right1, right2 := math.MaxInt32, math.MaxInt32
+
+		if cut1 != n {
+			right1 = nums1[cut1]
+		}
+		if cut2 != m {
+			right2 = nums2[cut2]
+		}
+
+		if left1 <= right2 && left2 <= right1 {
+			if (n+m)%2 == 0 {
+				return float64((maxValue(left1, left2))+minValue(right1, right2)) / 2.0
 			} else {
-				l = mid + 1
+				return float64((maxValue(left1, left2)))
 			}
 		}
-		arr = append(arr[:l], append([]int{nums2[k]}, arr[l:]...)...)
-		k++
+		if left1 > right2 {
+			high = cut1 - 1
+		}
+		if left2 > right1 {
+			low = cut1 + 1
+		}
 	}
-	if isOdd {
-		return float64(arr[length])
+	return 0.0
+}
+func maxValue(a, b int) int {
+	if a > b {
+		return a
 	}
-	return (float64(arr[length]) + float64(arr[length-1])) / 2.0
+	return b
+}
+func minValue(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
