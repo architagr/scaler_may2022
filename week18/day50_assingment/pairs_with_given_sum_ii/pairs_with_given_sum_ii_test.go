@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestAggressiveCows(t *testing.T) {
+func TestSum2II(t *testing.T) {
 	type TestCase struct {
 		input    []int
 		b        int
