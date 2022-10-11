@@ -1,4 +1,4 @@
-package double_character_trouble
+package perfect_number
 
 import (
 	"fmt"
@@ -6,33 +6,24 @@ import (
 )
 
 type TestCase struct {
-	input    string
+	input    int
 	expected string
 }
 
-func TestKReverseLinkedList(t *testing.T) {
+func TestPerfectNumber(t *testing.T) {
 	testCases := make([]TestCase, 0)
 
 	testCases = append(testCases, TestCase{
-		input:    "ab",
-		expected: "ab",
+		input:    3,
+		expected: "1111",
 	})
 	testCases = append(testCases, TestCase{
-		input:    "abccbc",
-		expected: "ac",
+		input:    4,
+		expected: "1221",
 	})
-	testCases = append(testCases, TestCase{
-		input:    "abba",
-		expected: "",
-	})
-	testCases = append(testCases, TestCase{
-		input:    "aaaaa",
-		expected: "a",
-	})
-
 	for i, testCase := range testCases {
 		t.Run(fmt.Sprintf("testing number %d", (i+1)), func(test *testing.T) {
-			x := DoubleCharTrouble(testCase.input)
+			x := PerfectNumber(testCase.input)
 
 			if x != testCase.expected {
 				test.Fatalf("tested %d expected %+v but got %+v", (i + 1), testCase.expected, x)
