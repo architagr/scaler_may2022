@@ -1,16 +1,16 @@
 package inorder_traversal
 
-type treeNode struct {
-	left  *treeNode
+type TreeNode struct {
+	Left  *TreeNode
 	value int
-	right *treeNode
+	Right *TreeNode
 }
 
-func treeNode_new(val int) *treeNode {
-	var node *treeNode = new(treeNode)
+func TreeNode_new(val int) *TreeNode {
+	var node *TreeNode = new(TreeNode)
 	node.value = val
-	node.left = nil
-	node.right = nil
+	node.Left = nil
+	node.Right = nil
 	return node
 }
 
@@ -19,18 +19,18 @@ func treeNode_new(val int) *treeNode {
  *
  * @Output Integer array.
  */
-func InorderTraversal(A *treeNode) []int {
+func InorderTraversal(A *TreeNode) []int {
 	return Parse(A)
 }
 
-func Parse(head *treeNode) []int {
+func Parse(head *TreeNode) []int {
 	if head == nil {
 		return []int{}
 	}
 	result := make([]int, 0)
 
-	result = append(result, Parse(head.left)...)
+	result = append(result, Parse(head.Left)...)
 	result = append(result, head.value)
-	result = append(result, Parse(head.right)...)
+	result = append(result, Parse(head.Right)...)
 	return result
 }
