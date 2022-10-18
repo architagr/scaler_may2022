@@ -50,7 +50,7 @@ func nextGreater(A []int) []int {
 	result[len(A)-1] = -1
 	stack := Stack{
 		count: 0,
-		head:  NewNode(A[0]),
+		head:  NewNode(A[len(A)-1]),
 	}
 	for i := len(A) - 1; i > -1; i-- {
 		if stack.Top() > A[i] {
