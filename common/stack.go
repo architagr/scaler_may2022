@@ -1,7 +1,5 @@
 package common
 
-import "fmt"
-
 type Node[T any] struct {
 	Data T
 	Prev *Node[T]
@@ -52,6 +50,5 @@ func (stack *Stack[T]) IsEmpty() bool {
 }
 
 func (stack *Stack[T]) Count() int {
-	fmt.Fprint()
 	return stack.count
 }
