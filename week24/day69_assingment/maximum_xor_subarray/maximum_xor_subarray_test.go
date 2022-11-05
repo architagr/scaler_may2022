@@ -1,4 +1,4 @@
-package maximum_xor
+package maximum_xor_subarray
 
 import (
 	"fmt"
@@ -8,25 +8,24 @@ import (
 
 type TestCase struct {
 	head     []int
-	expected int
+	expected []int
 }
 
-func TestMaxXor(t *testing.T) {
+func TestMaxXorSubarray(t *testing.T) {
 	testCases := make([]TestCase, 0)
 
 	testCases = append(testCases, TestCase{
-		head:     []int{1, 2, 3, 4, 5},
-		expected: 7,
+		head:     []int{1, 4, 3},
+		expected: []int{2, 3},
 	})
-
 	testCases = append(testCases, TestCase{
-		head:     []int{5, 17, 100, 11},
-		expected: 117,
+		head:     []int{8},
+		expected: []int{1, 1},
 	})
 
 	for i, testCase := range testCases {
 		t.Run(fmt.Sprintf("testing number %d", (i+1)), func(test *testing.T) {
-			x := MaxXor(testCase.head)
+			x := MaxXorSubarray(testCase.head)
 
 			if !reflect.DeepEqual(x, testCase.expected) {
 				test.Fatalf("tested %d expected %+v but got %+v", (i + 1), testCase.expected, x)
