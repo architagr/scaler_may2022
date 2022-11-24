@@ -13,17 +13,17 @@ type TestCase struct {
 func TestUniquePathsWithObstacles(t *testing.T) {
 	testCases := make([]TestCase, 0)
 
-	// testCases = append(testCases, TestCase{
-	// 	inputA:   2,
-	// 	inputB:   4,
-	// 	expected: 4,
-	// })
+	testCases = append(testCases, TestCase{
+		inputA:   2,
+		inputB:   4,
+		expected: 4,
+	})
 
-	// testCases = append(testCases, TestCase{
-	// 	inputA:   1,
-	// 	inputB:   3,
-	// 	expected: 1,
-	// })
+	testCases = append(testCases, TestCase{
+		inputA:   1,
+		inputB:   3,
+		expected: 1,
+	})
 
 	testCases = append(testCases, TestCase{
 		inputA:   56,
