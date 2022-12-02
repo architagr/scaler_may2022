@@ -20,14 +20,14 @@ func ReadInt(in *bufio.Reader) int {
 	return n
 }
 
-func ReadLineNumbs(in *bufio.Reader) []string {
+func ReadStrArr(in *bufio.Reader) []string {
 	line := ReadString(in)
 	numbs := strings.Split(line, " ")
 	return numbs
 }
 
 func ReadArrInt(in *bufio.Reader) []int {
-	numbs := ReadLineNumbs(in)
+	numbs := ReadStrArr(in)
 	arr := make([]int, 0)
 	for _, n := range numbs {
 		val, _ := strconv.Atoi(n)
