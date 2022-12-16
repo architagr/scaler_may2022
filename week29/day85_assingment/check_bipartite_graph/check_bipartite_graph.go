@@ -1,4 +1,4 @@
-package cycle_in_undirected_graph
+package check_bipartite_graph
 
 import "fmt"
 
@@ -65,11 +65,8 @@ func (queue *Queue) Peep() (result int, err error) {
 func (queue *Queue) IsEmpty() bool {
 	return queue.count == 0
 }
-
-func CycleUndirectedGraph(A int, B [][]int) int {
-	visited := make([]bool, A+1)
-	count := 0
-
+func solve(A int, B [][]int) int {
+	visited := make([]int, A)
 	at := make(map[int]map[int]bool)
 	for i := 0; i < len(B); i++ {
 		val, ok := at[B[i][0]]
@@ -87,26 +84,28 @@ func CycleUndirectedGraph(A int, B [][]int) int {
 		at[B[i][1]] = val
 	}
 	queue := NewQueue()
-	for i := 1; i <= A; i++ {
-		if !visited[i] {
-			count++
+
+	for i := 0; i < A; i++ {
+		if visited[i] == 0 {
+			visited[i] = 1
 			queue.Enqueue(i)
-			visited[i] = true
 			for !queue.IsEmpty() {
-				x := queue.Dequeue().Data
-				val := at[x]
-				for key := range val {
-					if !visited[key] {
-						queue.Enqueue(key)
-						visited[key] = true
+				data := queue.Dequeue().Data
+				newSet := 1
+				if visited[data] == 1 {
+					newSet = 2
+				}
+				val := at[data]
+				for k := range val {
+					if visited[k] == 0 {
+						visited[k] = newSet
+						queue.Enqueue(k)
+					} else if visited[k] == visited[data] {
+						return 0
 					}
 				}
 			}
 		}
 	}
-
-	if len(B) > A-count {
-		return 1
-	}
-	return 0
+	return 1
 }

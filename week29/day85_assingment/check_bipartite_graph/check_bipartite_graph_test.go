@@ -1,4 +1,4 @@
-package cycle_in_undirected_graph
+package check_bipartite_graph
 
 import (
 	"fmt"
@@ -15,20 +15,20 @@ func TestCycleUndirectedGraph(t *testing.T) {
 	testCases := make([]TestCase, 0)
 
 	testCases = append(testCases, TestCase{
-		inputA:   5,
-		inputB:   [][]int{{1, 2}, {1, 3}, {2, 3}, {1, 4}, {4, 5}},
+		inputA:   2,
+		inputB:   [][]int{{0, 1}},
 		expected: 1,
 	})
 
 	testCases = append(testCases, TestCase{
 		inputA:   3,
-		inputB:   [][]int{{1, 2}, {1, 3}},
+		inputB:   [][]int{{0, 1}, {0, 2}, {1, 2}},
 		expected: 0,
 	})
 
 	for i, testCase := range testCases {
 		t.Run(fmt.Sprintf("testing number %d", (i+1)), func(test *testing.T) {
-			x := CycleUndirectedGraph(testCase.inputA, testCase.inputB)
+			x := solve(testCase.inputA, testCase.inputB)
 
 			if x != testCase.expected {
 				test.Fatalf("tested %d expected %+v but got %+v", (i + 1), testCase.expected, x)
