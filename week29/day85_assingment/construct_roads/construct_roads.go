@@ -1,4 +1,4 @@
-package check_bipartite_graph
+package construct_roads
 
 import "fmt"
 
@@ -65,8 +65,9 @@ func (queue *Queue) Peep() (result int, err error) {
 func (queue *Queue) IsEmpty() bool {
 	return queue.count == 0
 }
-func CheckBiPartiteGraph(A int, B [][]int) int {
-	visited := make([]int, A)
+func CheckRoads(A int, B [][]int) int {
+	visited := make([]int, A+1)
+
 	at := make(map[int]map[int]bool)
 	for i := 0; i < len(B); i++ {
 		val, ok := at[B[i][0]]
@@ -85,7 +86,7 @@ func CheckBiPartiteGraph(A int, B [][]int) int {
 	}
 	queue := NewQueue()
 
-	for i := 0; i < A; i++ {
+	for i := 1; i <= A; i++ {
 		if visited[i] == 0 {
 			visited[i] = 1
 			queue.Enqueue(i)
@@ -107,5 +108,17 @@ func CheckBiPartiteGraph(A int, B [][]int) int {
 			}
 		}
 	}
-	return 1
+	return calculate(visited, len(B))
+}
+func calculate(vissited []int, countEdge int) int {
+	MOD := int64(1000000007)
+	count1, count2 := 0, 0
+	for i := 1; i < len(vissited); i++ {
+		if vissited[i] == 1 {
+			count1++
+		} else {
+			count2++
+		}
+	}
+	return int((int64(count1)*int64(count2))%MOD) - countEdge
 }
